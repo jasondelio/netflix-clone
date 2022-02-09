@@ -1,6 +1,6 @@
 const ApiError = require('./api-error');
 
-function apiErrorHandler(err, req, res, next) {
+const apiErrorHandler = (err, req, res, next) =>{
   if (err instanceof ApiError) {
     res.status(err.code).json(err.message);
     return;

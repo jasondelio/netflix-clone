@@ -3,7 +3,7 @@ const ApiError = require('./api-error');
 
 const authorizationValidationRules = () => {
   return [
-    header('authorization')
+    header('x-api-key')
       .exists()
       .custom(value => value === process.env.API_KEY)
       .withMessage("Invalid Api Key")

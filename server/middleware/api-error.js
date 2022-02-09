@@ -16,5 +16,5 @@ class ApiError {
       return new ApiError(500, msg);
     }
   }
-  
-  module.exports = ApiError;
+
+module.exports = ApiError;
