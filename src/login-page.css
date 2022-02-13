@@ -1,0 +1,83 @@
+.login-wrapper{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-background-wrapper{
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/6dea7743-5586-45d1-89a2-9569b1bb0340/6964ce60-81a0-4844-8ac5-199990cc7af5/AU-en-20220207-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+}
+
+.background-overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo{
+    height: 150px;
+    position: absolute;
+    margin-left: 1%;
+    left:0;
+    top:0;
+}
+
+.sign-in-wrapper{
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    margin-left: -200px;
+    margin-top: 110px;
+    top: 0;
+    left: 50%;
+}
+
+.sign-in-text{
+    color: white;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.username-input{
+    border-radius: 4px;
+    border: none;
+    width: 70%;
+    padding-left: 15px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.password-input{
+    border-radius: 4px;
+    border: none;
+    width: 70%;
+    padding-left: 15px;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.no-bullets{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sign-in-button{
+    background-color: red;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    margin: 40px auto;
+    width: 75%;
+    height: 50px;
+    display:block;
+}
+
