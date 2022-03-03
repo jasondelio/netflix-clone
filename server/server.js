@@ -5,6 +5,7 @@ const cors = require('cors');
 const userRoute = require('./routes/user-route');
 const apiErrorHandler = require('./middleware/api-error-handler');
 const connectDB = require('./configuration/mongo-configuration');
+const { corsOptions } = require('./middleware/cors-middleware');
 
 require('dotenv').config();
 
@@ -17,7 +18,7 @@ connectDB();
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use("/api/v1/user", userRoute);
 

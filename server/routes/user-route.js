@@ -9,7 +9,7 @@ router.get("/health-check", authorizationValidationRules(), authorizationValidat
     res.send("Server is up");
 });
 
-router.post("/", authorizationValidationRules(), authorizationValidate, userValidationRules(), userValidate, async(req, res, next) => {
+router.post("/register", authorizationValidationRules(), authorizationValidate, userValidationRules(), userValidate, async(req, res, next) => {
     const emailExists = await User.findOne({email : req.body.email});
     const usernameExists = await User.findOne({username : req.body.username});
 
@@ -24,7 +24,7 @@ router.post("/", authorizationValidationRules(), authorizationValidate, userVali
     res.json(savedUser);
 });
 
-router.get("/", authorizationValidationRules(), authorizationValidate, async(req, res, next) => {
+router.post("/", authorizationValidationRules(), authorizationValidate, async(req, res, next) => {
     let user = await User.findOne({email : req.body.email});
 
     if(!user){
