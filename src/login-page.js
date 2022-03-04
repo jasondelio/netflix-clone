@@ -33,10 +33,18 @@ const LoginPage = () => {
                 localStorage.setItem('REFRESH_TOKEN', res.data.refreshToken);
                 setIsValidUser(true);
                 dispatch({type : 'SIGN_IN'});
-                console.log("test");
                 navigate('/home');
             })
-            .catch(err => setIsValidUser(false));
+            .catch(err => {
+                setIsValidUser(false);
+                setPassword("");
+            });
+    }
+
+    const handlerKeyPressed = (e) => {
+        if (e.key === 'Enter') {
+            handlerSubmit();
+        }
     }
 
     return (
@@ -50,10 +58,10 @@ const LoginPage = () => {
                 {!isValidUser && <div className="error-message">Sorry, but your credentials do not match <br></br>our records. Please try again or <Link to="/" className="new-account-text" >create <br></br>a new account.</Link></div>}
                 <ul className="no-bullets">
                     <li>
-                        <input className="username-input" placeholder="Username or Email" onChange={(e) => setUsername(e.target.value)}></input>
+                        <input className="username-input" placeholder="Username or Email" value={userName} onChange={(e) => setUsername(e.target.value)} onKeyPress={(e) => handlerKeyPressed(e)}></input>
                     </li>
                     <li>
-                        <input className="password-input" placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}></input>
+                        <input className="password-input" placeholder="Password" value={password} type="password" onChange={(e) => setPassword(e.target.value)} onKeyPress={(e) => handlerKeyPressed(e)}></input>
                     </li>
                     <li>
                         <button className="sign-in-button" onClick={handlerSubmit}>Sign in</button>

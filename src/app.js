@@ -55,8 +55,6 @@ const App = () => {
         }
     }, [dispatch]); 
 
-    console.log(userState)
-
     return(
         <Router>
             <Routes>
