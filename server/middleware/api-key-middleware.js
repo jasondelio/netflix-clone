@@ -11,7 +11,7 @@ const authorizationValidationRules = () => {
 }
 
 const authorizationValidate = (req, res, next) => {
-  const errors = validationResult(req)
+  const errors = validationResult(req);
   if (!errors.isEmpty()) {
     next(ApiError.unauthorized({ errors: errors.array() }));
     return;

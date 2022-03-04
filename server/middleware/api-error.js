@@ -15,6 +15,10 @@ class ApiError {
     static internal(msg) {
       return new ApiError(500, msg);
     }
+
+    static noContent(msg){
+      return new ApiError(204, msg);
+    }
   }
 
 module.exports = ApiError;
